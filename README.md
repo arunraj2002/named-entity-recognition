@@ -1,5 +1,4 @@
 # Named Entiry Recognition
-
 ## AIM
 To develop an LSTM-based model for recognizing the named entities in the text.
 
@@ -40,7 +39,6 @@ print("Unique tags are:", tags)
 num_words = len(words)
 num_tags = len(tags)
 num_words
-
 class SentenceGetter(object):
     def __init__(self, data):
         self.n_sent = 1
@@ -86,7 +84,6 @@ y = sequence.pad_sequences(maxlen=max_len,
                   padding="post",
                   value=tag2idx["O"])
 X_train, X_test, y_train, y_test = train_test_split(X, y,test_size=0.2, random_state=1)
-
 model.summary()
 # Write your code here
 model.compile(optimizer="adam",
@@ -113,7 +110,6 @@ for w, true, pred in zip(X_test[i], y_true, p[0]):
     print("{:15}{}\t{}".format(words[w-1], tags[true], tags[pred]))
     
 ```
-
 ## OUTPUT
 ### Training Loss, Validation Loss Vs Iteration Plot
 
